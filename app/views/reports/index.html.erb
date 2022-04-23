@@ -1,0 +1,28 @@
+<h1> Daily Reports </h1>
+<style>
+table, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse; }
+</style>
+<table style="width:80%">
+  <thead>
+    <tr>
+        <td><b>Order ID</b></td>
+        <td><b>Name</b></td>
+        <td><b>Email</b></td>
+        <td><b>Total Price</b></td>
+        <td><b>Date</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reports.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.customer.name %></td>
+        <td><%= order.customer.email %></td>
+        <td><%= order.total_price %></td>
+        <td><%= order.date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
